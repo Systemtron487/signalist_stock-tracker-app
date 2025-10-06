@@ -42,7 +42,7 @@ export default function SearchCommand({ renderAs = 'button', label = 'Add stock'
         }
     }
 
-    const debouncedSearch = useDebounce(handleSearch, 300);
+    const debouncedSearch = useDebounce(handleSearch, 300)
 
     useEffect(() => {
         debouncedSearch();
