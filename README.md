@@ -20,6 +20,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Scheduled jobs (Inngest cron)
+
+Inngest cron expressions use the standard 5-field format: "minute hour day-of-month month day-of-week" and are interpreted in UTC.
+
+Examples:
+- 0 12 * * *  => run daily at 12:00 UTC
+- 0 6 * * 1-5 => run at 06:00 UTC Monday–Friday
+- 0 */3 * * * => run every 3 hours at minute 0
+
+In this repo, sendDailyNewsSummary is scheduled with 0 12 * * * which runs once per day at 12:00 UTC. If you need it to run at a local time, convert that local time to UTC and update the cron accordingly.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
